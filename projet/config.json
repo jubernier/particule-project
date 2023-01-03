@@ -8,5 +8,6 @@
 	"RandomSpawn": true,
 	"SpawnX": 400,
 	"SpawnY": 400,
-	"SpawnRate": 1
+	"SpawnRate": 1,
+	"MaxSpeed": 10
 }
