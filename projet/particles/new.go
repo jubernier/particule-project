@@ -19,8 +19,8 @@ func NewSystem() System {
 	rand.Seed(time.Now().UnixNano())
 	for i := 0 ; i < config.General.InitNumParticles ; i++{
 		if config.General.RandomSpawn{
-			PosX = rand.Float64() * (float64(config.General.WindowSizeX))
-			PosY = rand.Float64() * (float64(config.General.WindowSizeY))
+			PosX = rand.Float64() * (float64(config.General.WindowSizeX)
+			PosY = rand.Float64() * (float64(config.General.WindowSizeY)
 		}
 		l.PushFront(&Particle{
 			PositionX: PosX,
