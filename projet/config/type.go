@@ -19,6 +19,7 @@ type Config struct {
 	MaxSpeed                 float64
 	Gravity                  float64
 	LifeRate                 float64
+	Margin                   bool
 }
 
 var General Config
