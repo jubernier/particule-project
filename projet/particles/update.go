@@ -13,9 +13,12 @@ func (s *System) Update() {
 		// do something with e.Value
 		particule, ok := e.Value.(*Particle)
 		if ok {
-			particule.PositionX = particule.PositionX + particule.SpeedX
-			particule.PositionY = particule.PositionY - particule.SpeedY
-
+			particule.PositionX = particule.PositionX + particule.SpeedX + config.General.Gravity
+			particule.PositionY = particule.PositionY - particule.SpeedY + particule.LifeRate*config.General.Gravity
+			particule.LifeRate++
+			if particule.LifeRate > 20 {
+				particule.Opacity = particule.Opacity - 0.1
+			}
 		}
 	}
 	if s.buffer >= 1 {

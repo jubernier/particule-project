@@ -9,5 +9,7 @@
 	"SpawnX": 400,
 	"SpawnY": 400,
 	"SpawnRate": 1,
-	"MaxSpeed": 10
+	"MaxSpeed": 10,
+	"Gravity": 0.981,
+	"LifeRate": 0
 }
