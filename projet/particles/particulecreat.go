@@ -21,5 +21,6 @@ func ParticuleCr() *Particle {
 		SpeedX:  rand.Float64() * config.General.MaxSpeed,
 		SpeedY:  rand.Float64() * config.General.MaxSpeed,
 	}
+
 	return &particule
 }

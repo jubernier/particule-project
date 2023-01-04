@@ -14,7 +14,8 @@ func (s *System) Update() {
 		particule, ok := e.Value.(*Particle)
 		if ok {
 			particule.PositionX = particule.PositionX + particule.SpeedX
-			particule.PositionY = particule.PositionY + particule.SpeedY
+			particule.PositionY = particule.PositionY - particule.SpeedY
+
 		}
 	}
 	if s.buffer >= 1 {
