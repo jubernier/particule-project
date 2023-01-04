@@ -1,11 +1,14 @@
 package main
 
 import (
-	"github.com/hajimehoshi/ebiten/v2"
 	"log"
+	"math/rand"
 	"project-particles/assets"
 	"project-particles/config"
 	"project-particles/particles"
+	"time"
+
+	"github.com/hajimehoshi/ebiten/v2"
 )
 
 // main est la fonction principale du projet. Elle commence par lire le fichier
@@ -15,7 +18,7 @@ import (
 // charge de faire les mise-à-jour (Update) et affichages (Draw) de manière
 // régulière.
 func main() {
-
+	rand.Seed(time.Now().UnixNano())
 	config.Get("config.json")
 	assets.Get()
 
