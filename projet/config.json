@@ -8,10 +8,8 @@
 	"RandomSpawn": true,
 	"SpawnX": 400,
 	"SpawnY": 400,
-	"SpawnRate": 1000,
+	"SpawnRate": 1,
 	"MaxSpeed": 10,
 	"Gravity": 0.981,
-	"LifeRate": 0,
-	"LifeRateMax": 20,
-	"Margin": true
+	"LifeRate": 0
 }
