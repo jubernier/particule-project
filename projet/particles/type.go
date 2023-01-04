@@ -7,7 +7,6 @@ import "container/list"
 // évoluer durant votre projet.
 type System struct {
 	Content *list.List
-	buffer  float64
 }
 
 // Particle définit une particule.
@@ -22,4 +21,5 @@ type Particle struct {
 	Opacity                         float64
 	SpeedX, SpeedY                  float64
 	LifeRate                        float64
+	LifeRateMax                     float64
 }
