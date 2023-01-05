@@ -1,7 +1,6 @@
 package particles
 
 import (
-	"fmt"
 	"testing"
 )
 
@@ -10,7 +9,6 @@ import (
 func TestPartCreat(t *testing.T) {
 	var listeParticule []Particle
 	listeParticule = append(listeParticule, *ParticuleCr())
-	fmt.Println(listeParticule)
 	if len(listeParticule) != 1 {
 		t.Error()
 	}

@@ -6,7 +6,7 @@ import (
 )
 
 func TestNbParticule(t *testing.T) {
-	if config.General.InitNumParticles != l.Len() {
+	if config.General.InitNumParticles != NewSystem().Content.Len() {
 		t.Error()
 	}
 }
