@@ -17,9 +17,12 @@ func (s *System) Update() {
 		if ok {
 			particule.SpeedY = particule.SpeedY + config.General.Gravity
 			particule.PositionX = particule.PositionX + particule.SpeedX
-			particule.PositionY = particule.PositionY + particule.SpeedY 
+			particule.PositionY = particule.PositionY + particule.SpeedY
 			particule.LifeRate++
-			
+
+			if config.General.Design {
+				particule.DesignParticle()
+			}
 			if config.General.Margin {
 				if particule.PositionX >= float64(config.General.WindowSizeX) || particule.PositionX < 0 || particule.PositionY > float64(config.General.WindowSizeY) {
 					particule.PositionX = float64(config.General.WindowSizeX) + 100

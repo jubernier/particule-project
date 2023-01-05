@@ -9,8 +9,9 @@
 	"SpawnX": 400,
 	"SpawnY": 400,
 	"SpawnRate": 0.6,
-	"MaxSpeed": -10,
-	"Gravity": 0.984,
-	"LifeRate": 180,
-	"Margin": true
+	"MaxSpeed": 0,
+	"Gravity": 0,
+	"LifeRate": 60,
+	"Margin": true,
+	"Design": true
 }

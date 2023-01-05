@@ -20,6 +20,7 @@ type Config struct {
 	Gravity                  float64
 	LifeRate                 float64
 	Margin                   bool
+	Design                   bool
 }
 
 var General Config
