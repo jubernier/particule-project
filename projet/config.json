@@ -13,5 +13,6 @@
 	"Gravity": 0,
 	"LifeRate": 60,
 	"Margin": true,
-	"Design": true
+	"Design": true,
+	"OpacityRate": 1
 }

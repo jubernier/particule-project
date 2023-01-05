@@ -23,6 +23,13 @@ func (s *System) Update() {
 			if config.General.Design {
 				particule.DesignParticle()
 			}
+
+			if config.General.OpacityRate == 1 {
+				particule.IncreaseOpacity()
+			} else if config.General.OpacityRate == 2 {
+				particule.DecreaseOpacity()
+			}
+
 			if config.General.Margin {
 				if particule.PositionX >= float64(config.General.WindowSizeX) || particule.PositionX < 0 || particule.PositionY > float64(config.General.WindowSizeY) {
 					particule.PositionX = float64(config.General.WindowSizeX) + 100

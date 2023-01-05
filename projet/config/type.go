@@ -21,6 +21,7 @@ type Config struct {
 	LifeRate                 float64
 	Margin                   bool
 	Design                   bool
+	OpacityRate              int
 }
 
 var General Config
