@@ -20,7 +20,7 @@ func ParticuleCr() *Particle {
 		Opacity:  1,
 		SpeedX:   rand.Float64() * config.General.MaxSpeed,
 		SpeedY:   rand.Float64() * config.General.MaxSpeed,
-		LifeRate: config.General.LifeRate,
+		LifeRate: 0,
 	}
 
 	return &particule
