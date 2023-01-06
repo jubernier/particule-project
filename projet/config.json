@@ -6,14 +6,14 @@
 	"Debug": true,
 	"InitNumParticles": 10,
 	"RandomSpawn": false,
-	"SpawnX": 400,
+	"SpawnX": 900,
 	"SpawnY": 400,
 	"SpawnRate": 0.6,
 	"MaxSpeed": 10,
 	"TypeSpeed": 0,
 	"Gravity": 0,
 	"LifeRate": 60,
-	"Margin": true,
+	"Margin": false,
 	"Design": true,
 	"OpacityRate": 1
 }

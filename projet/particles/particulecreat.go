@@ -6,8 +6,8 @@ import (
 )
 
 func ParticuleCr() *Particle {
-	PosX := float64(config.General.SpawnX)
-	PosY := float64(config.General.SpawnY)
+	var PosX float64 = float64(config.General.SpawnX)
+	var PosY float64 = float64(config.General.SpawnY)
 	if config.General.RandomSpawn {
 		PosX = rand.Float64() * float64(config.General.WindowSizeX)
 		PosY = rand.Float64() * float64(config.General.WindowSizeY)
@@ -28,7 +28,7 @@ func ParticuleCr() *Particle {
 	var particule Particle = Particle{
 		PositionX: PosX,
 		PositionY: PosY,
-		ScaleX:    1, ScaleY: 1,
+		ScaleX:    3, ScaleY: 3,
 		ColorRed: 1, ColorGreen: 1, ColorBlue: 1,
 		SpeedX:   TypeSpeedX,
 		SpeedY:   TypeSpeedY,
