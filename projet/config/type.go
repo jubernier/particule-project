@@ -17,6 +17,7 @@ type Config struct {
 	SpawnX, SpawnY           int
 	SpawnRate                float64
 	MaxSpeed                 float64
+	TypeSpeed                int
 	Gravity                  float64
 	LifeRate                 float64
 	Margin                   bool

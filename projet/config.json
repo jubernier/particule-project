@@ -10,6 +10,7 @@
 	"SpawnY": 400,
 	"SpawnRate": 0.6,
 	"MaxSpeed": 0,
+	"TypeSpeed": 0,
 	"Gravity": 0,
 	"LifeRate": 60,
 	"Margin": true,
