@@ -25,7 +25,14 @@ Pour compiler le projet, il vous faudra utiliser la commande `go build` depuis l
     - Fait apparaitre un nombre de particules définis par le paramêtre SpawnRate au cours du temps
 
 ## Test
-Résultat du `go test` :
+
+Expliquer test
+
+Résultat du `go test ./particles/` :
 ```
-A FAIRE FINIR TEST UPDATE ET PARTICULECR
+ok  	project-particles/particles	0.002s
+
 ```
+
+## Contribution
+Basma Malki et Bernier Justine INFO 1 Groupe 1
