@@ -17,10 +17,9 @@ Pour compiler le projet, il vous faudra utiliser la commande `go build` depuis l
     - Ajoute la vitesse au position des particules
     - Ici, la fonction ParticuleCr() permet :
         - de définir la vitesse SpeedX et la vitesse SpeedY de la particule créer, les vitesses sont aléatoires et en fonction de la valeur du paramêtre MaxSpeed
-    <A FAIRE>
-    - si le paramêtre TypeSpeed est a 0 les valeurs des vitesses peuvent être négative
-    - si le paramêtre TypeSpeed est a 1 les valeurs des vitesses ne seront que positive
-    - si le paramêtre TypeSpeed est a 2 les valeurs des vitesses ne seront que négatives 
+        - si le paramêtre TypeSpeed est a 0 les valeurs des vitesses peuvent être négatives
+        - si le paramêtre TypeSpeed est a 1 les valeurs des vitesses ne seront que négatives
+        - si le paramêtre TypeSpeed est a une autre valeur, les valeurs des vitesses ne seront que négatives 
 
 - [X] Update(): génération de particules
     - Fait apparaitre un nombre de particules définis par le paramêtre SpawnRate au cours du temps
