@@ -18,11 +18,6 @@ type Config struct {
 	SpawnRate                float64
 	MaxSpeed                 float64
 	TypeSpeed                int
-	Gravity                  float64
-	LifeRate                 float64
-	Margin                   bool
-	Design                   bool
-	OpacityRate              int
 }
 
 var General Config

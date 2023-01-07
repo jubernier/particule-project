@@ -30,10 +30,9 @@ func ParticuleCr() *Particle {
 		PositionY: PosY,
 		ScaleX:    3, ScaleY: 3,
 		ColorRed: 1, ColorGreen: 1, ColorBlue: 1,
-		SpeedX:   TypeSpeedX,
-		SpeedY:   TypeSpeedY,
-		Opacity:  1,
-		LifeRate: 0,
+		SpeedX:  TypeSpeedX,
+		SpeedY:  TypeSpeedY,
+		Opacity: 1,
 	}
 
 	return &particule
