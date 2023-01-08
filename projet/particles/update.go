@@ -18,10 +18,10 @@ func (s *System) Update() {
 		}
 	}
 	for i := 0; i < int(config.General.SpawnRate); i++ {
-		s.Content.PushFront(ParticuleCr())
+		s.Content.PushFront(CreatParticle())
 	}
 	if indice >= 1 {
-		s.Content.PushFront(ParticuleCr())
+		s.Content.PushFront(CreatParticle())
 		indice--
 	}
 }

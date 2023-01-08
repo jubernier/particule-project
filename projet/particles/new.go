@@ -11,7 +11,7 @@ import (
 func NewSystem() System {
 	l := list.New()
 	for i := 0; i < config.General.InitNumParticles; i++ {
-		l.PushFront(ParticuleCr())
+		l.PushFront(CreatParticle())
 	}
 
 	return System{Content: l}
