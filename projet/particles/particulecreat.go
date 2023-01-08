@@ -5,6 +5,8 @@ import (
 	"project-particles/config"
 )
 
+// La fonction ParticuleCR() permet de créer une seule particule
+
 func ParticuleCr() *Particle {
 	var PosX float64 = float64(config.General.SpawnX)
 	var PosY float64 = float64(config.General.SpawnY)

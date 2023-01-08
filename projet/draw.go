@@ -2,17 +2,15 @@ package main
 
 import (
 	"fmt"
-	"github.com/hajimehoshi/ebiten/v2"
-	"github.com/hajimehoshi/ebiten/v2/ebitenutil"
 	"project-particles/assets"
 	"project-particles/config"
 	"project-particles/particles"
+
+	"github.com/hajimehoshi/ebiten/v2"
+	"github.com/hajimehoshi/ebiten/v2/ebitenutil"
 )
 
-// Draw se charge d'afficher à l'écran l'état actuel du système de particules
-// g.system. Elle est appelée automatiquement environ 60 fois par seconde par
-// la bibliothèque Ebiten. Cette fonction pourra être légèrement modifiée quand
-// c'est précisé dans le sujet.
+// Draw se charge d'afficher à l'écran l'état actuel du système de particules g.system. Elle est appelée automatiquement environ 60 fois par seconde par la bibliothèque Ebiten.
 func (g *game) Draw(screen *ebiten.Image) {
 
 	for e := g.system.Content.Front(); e != nil; e = e.Next() {

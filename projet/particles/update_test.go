@@ -7,9 +7,7 @@ import (
 )
 
 func TestUpdate(t *testing.T) {
-	//Test par exemple si position de x a bougé
-	//là je ne test pas que la particule a bougé par rapport a la position initiale
-	//sauf que rand des fois a 0
+	//Test qui permet de vérifier si la position de la particule change .
 	config.General.InitNumParticles = 1
 	config.General.TypeSpeed = 1
 	config.General.MaxSpeed = 10

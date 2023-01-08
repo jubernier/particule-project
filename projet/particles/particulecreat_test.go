@@ -5,7 +5,8 @@ import (
 	"testing"
 )
 
-// Test si la fonction ParticuleCr() crée bien une particule.
+// Test pour vérifier que la particule a bien été créer
+
 func TestPartCreat(t *testing.T) {
 	var listeParticule []Particle
 	listeParticule = append(listeParticule, *ParticuleCr())
@@ -29,6 +30,7 @@ func TestScreenRandomSpawn(t *testing.T) {
 
 var particule *Particle = ParticuleCr()
 
+// Test qui permet de verifier si les particules apparaissent dans les positions définis par les paramétres SpawnX et SpawnY
 func TestSpawnParticule(t *testing.T) {
 	config.General.RandomSpawn = false
 	if particule.PositionX != float64(config.General.SpawnX) || ParticuleCr().PositionY != float64(config.General.SpawnY) {
@@ -36,6 +38,7 @@ func TestSpawnParticule(t *testing.T) {
 	}
 }
 
+// Test qui permet de vérifier si les particules dépassent le paramétre MaxSpeed
 func TestSpeed(t *testing.T) {
 	config.General.MaxSpeed = 10
 	if particule.SpeedX > config.General.MaxSpeed {
@@ -43,6 +46,7 @@ func TestSpeed(t *testing.T) {
 	}
 }
 
+// Test qui permet de vérifier qur la vitesse a une valeur négartive
 func TestTypeSpeed(t *testing.T) {
 	config.General.TypeSpeed = 1
 	if particule.SpeedX < 0 || particule.SpeedY < 0 {
