@@ -4,8 +4,9 @@ Pour compiler le projet, il vous faudra utiliser la commande `go build` depuis l
 
 ## Partie 4
 
-### Description
-    _Tous les paramêtres expliqués ci-dessous se trouve dans le fichier config.json, ils peuvent être modifié en fonction de l'effet voulut_
+_Tous les paramêtres expliqués ci-dessous se trouve dans le fichier config.json, ils peuvent être modifié en fonction de l'effet voulut_
+
+### Description des programmes et des paramêtres
 
 - [X] NewSystem():
     - La fonction ParticuleCr() permet :
@@ -19,18 +20,16 @@ Pour compiler le projet, il vous faudra utiliser la commande `go build` depuis l
         - de définir la vitesse SpeedX et la vitesse SpeedY de la particule créer, les vitesses sont aléatoires et en fonction de la valeur du paramêtre MaxSpeed
         - si le paramêtre TypeSpeed est a 0 les valeurs des vitesses peuvent être négatives
         - si le paramêtre TypeSpeed est a 1 les valeurs des vitesses ne seront que négatives
-        - si le paramêtre TypeSpeed est a une autre valeur, les valeurs des vitesses ne seront que négatives 
+        - si le paramêtre TypeSpeed est a une autre valeur, les valeurs des vitesses ne seront que positives 
 
 - [X] Update(): génération de particules
     - Fait apparaitre un nombre de particules définis par le paramêtre SpawnRate au cours du temps
 
 ## Test
 
-Expliquer test
-
-Résultat du `go test ./particles/` :
+Résultat du `go test ./tests` depuis le dossier racine du projet :
 ```
-ok  	project-particles/particles	0.002s
+ok      project-particles/tests
 
 ```
 
