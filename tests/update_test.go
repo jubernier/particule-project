@@ -31,10 +31,10 @@ func TestRandomSpawnUpdate(t *testing.T) {
 	config.General.SpawnRate = 1
 	var l *list.List = list.New()
 	l.PushFront(particles.CreatParticle())
-	var b *particles.System = &particles.System{Content: l}
-	var a *particles.System = &particles.System{Content: list.New()}
-	b.Update()
-	if b.Content.Len() == a.Content.Len() {
+	var systema *particles.System = &particles.System{Content: l}
+	var systemb *particles.System = &particles.System{Content: list.New()}
+	systema.Update()
+	if systema.Content.Len() == systemb.Content.Len() {
 		t.Error("Les particules ne sont pas crées au cours du temps alors que cela devraient être possible.")
 	}
 }
