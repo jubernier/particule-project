@@ -24,3 +24,15 @@ func TestUpdate(t *testing.T) {
 		t.Error("Les particules ne se déplace pas et pourtant elle devrait.")
 	}
 }
+
+func TestRandomSpawnUpdate(t *testing.T) {
+	config.General.SpawnRate = 1
+	var l *list.List = list.New()
+	l.PushFront(ParticuleCr())
+	var b *System = &System{Content: l}
+	var a *System = &System{Content: list.New()}
+	b.Update()
+	if b.Content.Len() == a.Content.Len() {
+		t.Error("Les particules ne sont pas crées au cours du temps alors que cela devraient être possible.")
+	}
+}
