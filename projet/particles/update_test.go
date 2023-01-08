@@ -6,8 +6,8 @@ import (
 	"testing"
 )
 
+// Test qui permet de vérifier si la position de la particule change en un appel de la fonction Update().
 func TestUpdate(t *testing.T) {
-	//Test qui permet de vérifier si la position de la particule change .
 	config.General.InitNumParticles = 1
 	config.General.TypeSpeed = 1
 	config.General.MaxSpeed = 10
@@ -25,6 +25,7 @@ func TestUpdate(t *testing.T) {
 	}
 }
 
+// Test qui permet de vérifier si il bien création de particules comme le définis le paramêtre SpawnRate.
 func TestRandomSpawnUpdate(t *testing.T) {
 	config.General.SpawnRate = 1
 	var l *list.List = list.New()
