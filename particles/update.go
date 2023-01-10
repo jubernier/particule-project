@@ -13,6 +13,7 @@ func (s *System) Update() {
 		// do something with e.Value
 		particule, ok := e.Value.(*Particle)
 		if ok {
+			particule.SpeedY = particule.SpeedY + config.General.Gravity
 			particule.PositionX = particule.PositionX + particule.SpeedX
 			particule.PositionY = particule.PositionY + particule.SpeedY
 			particule.LifeRate++

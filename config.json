@@ -11,7 +11,7 @@
 	"SpawnRate": 2,
 	"MaxSpeed": 7,
 	"TypeSpeed": 0,
-	"Gravity": 0,
+	"Gravity": 1,
 	"LifeRate": 60,
 	"Margin": true,
 	"Design": false,
