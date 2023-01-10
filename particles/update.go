@@ -15,6 +15,27 @@ func (s *System) Update() {
 		if ok {
 			particule.PositionX = particule.PositionX + particule.SpeedX
 			particule.PositionY = particule.PositionY + particule.SpeedY
+			particule.LifeRate++
+
+			if config.General.Design {
+				particule.DesignParticle()
+			}
+
+			if config.General.OpacityRate == 1 {
+				particule.IncreaseOpacity()
+			} else if config.General.OpacityRate == 2 {
+				particule.DecreaseOpacity()
+			}
+
+			if config.General.Margin {
+				if particule.PositionX >= float64(config.General.WindowSizeX) || particule.PositionX < 0 || particule.PositionY > float64(config.General.WindowSizeY) {
+					particule.PositionX = float64(config.General.WindowSizeX) + 100
+					go s.Content.Remove(e)
+				}
+			}
+			if particule.LifeRate >= config.General.LifeRate {
+				s.Content.Remove(e)
+			}
 		}
 	}
 	for i := 0; i < int(config.General.SpawnRate); i++ {
