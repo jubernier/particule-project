@@ -34,14 +34,14 @@ func CreatParticle() *Particle {
 	}
 
 	if config.General.CercleShape {
-		var axeX int = config.General.WindowSizeX / 2
-		var axeY int = config.General.WindowSizeY / 2
+		var axeX = config.General.WindowSizeX / 2
+		var axeY = config.General.WindowSizeY / 2
 		var i float64 = rand.Float64()
 		var e float64 = rand.Float64()
 		PosX = config.General.CercleRadius * math.Cos(e*math.Pi/i)
 		PosY = config.General.CercleRadius * math.Sin(e*math.Pi/i)
-		PosX = PosX - float64(axeX)
-		PosY = PosY - float64(axeY)
+		PosX = PosX + float64(axeX)
+		PosY = PosY + float64(axeY)
 	}
 
 	var particule Particle = Particle{

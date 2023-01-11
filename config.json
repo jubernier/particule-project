@@ -9,7 +9,7 @@
 	"SpawnX": 400,
 	"SpawnY": 400,
 	"SpawnRate": 2,
-	"MaxSpeed":10,
+	"MaxSpeed":0,
 	"TypeSpeed": 0,
 	"Gravity": 0,
 	"LifeRate": 100000,
@@ -17,5 +17,5 @@
 	"Design": false,
 	"OpacityRate": 0,
 	"CercleShape":true,
-	"CercleRadius" : 30
+	"CercleRadius" : 300
 }
