@@ -23,6 +23,10 @@ type Config struct {
 	Margin                   bool
 	Design                   bool
 	OpacityRate              int
+	CercleShape              bool
+	CercleRadius             float64
+	Angle                    float64
+	VitesseRotation          int
 }
 
 var General Config
