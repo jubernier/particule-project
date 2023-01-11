@@ -1,8 +1,6 @@
 package particles
 
-import (
-	"project-particles/config"
-)
+import "project-particles/config"
 
 // Update() mets à jour l'état du système de particules à chaque pas de temps. Elle est appellée exactement 60 fois par seconde de manière régulière par la fonction principale du projet.
 // A chaque appel de Update() les paricules se déplace ou non en fonction de la valeur du paramêtre MaxSpeed et des particules sont crées ou non en fonction du paramêtre SpawnRate.
@@ -36,7 +34,7 @@ func (s *System) Update() {
 				}
 			}
 			if particule.LifeRate >= config.General.LifeRate {
-				s.Content.MoveToBack(e)
+				s.Content.Remove(e)
 			}
 		}
 	}

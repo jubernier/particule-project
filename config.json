@@ -4,12 +4,12 @@
   "WindowSizeY": 600,
 	"ParticleImage": "assets/particle.png",
 	"Debug": true,
-	"InitNumParticles": 10000,
+	"InitNumParticles": 1000,
 	"RandomSpawn": true,
 	"SpawnX": 400,
 	"SpawnY": 400,
 	"SpawnRate": 2,
-	"MaxSpeed":0,
+	"MaxSpeed":10,
 	"TypeSpeed": 0,
 	"Gravity": 0,
 	"LifeRate": 100000,
@@ -17,7 +17,5 @@
 	"Design": false,
 	"OpacityRate": 0,
 	"CercleShape":true,
-	"CercleRadius" : 300,
-	"Angle": 30,
-	"VitesseRotation":10
+	"CercleRadius" : 30
 }
