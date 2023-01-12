@@ -28,3 +28,4 @@ type Config struct {
 }
 
 var General Config
+var NumberDeath int
