@@ -1,6 +1,7 @@
 package particles
 
 import (
+	"math"
 	"project-particles/config"
 )
 
@@ -19,6 +20,22 @@ func (s *System) Update() {
 			if config.General.Gravity {
 				particule.SpeedY = particule.SpeedY + config.General.GravityCoefficient
 			}
+			if config.General.CercleSpeed {
+				distanceX := float64(config.General.WindowSizeX/2) - (particule.PositionX)
+				distanceY := float64(config.General.WindowSizeY/2) - (particule.PositionY)
+				distance := math.Sqrt((distanceX * distanceX) + (distanceY * distanceY))
+				if distanceX/distance < 100.0 {
+					particule.SpeedX += distanceX / distance
+				}
+				if distanceY/distance < 100 {
+					particule.SpeedY += distanceY / distance
+				}
+				if particule.ExDistance > distance {
+					particule.SpeedX -= distanceX / distance
+					particule.SpeedY -= distanceY / distance
+				}
+				particule.ExDistance = distance
+			}
 
 			particule.PositionX = particule.PositionX + particule.SpeedX
 			particule.PositionY = particule.PositionY + particule.SpeedY
@@ -26,7 +43,6 @@ func (s *System) Update() {
 
 			if config.General.Margin {
 				if particule.PositionX >= float64(config.General.WindowSizeX) || particule.PositionX < 0 || particule.PositionY > float64(config.General.WindowSizeY) {
-					particule.PositionX = float64(config.General.WindowSizeX) + 100
 					go s.Content.Remove(e)
 				}
 			}
@@ -60,4 +76,5 @@ func (s *System) Update() {
 		s.Content.PushFront(CreatParticle())
 		indice--
 	}
+
 }

@@ -1,12 +1,9 @@
 package particles
 
 import (
-	"math"
 	"math/rand"
 	"project-particles/config"
 	"time"
-
-	"github.com/hajimehoshi/ebiten/v2"
 )
 
 // La fonction ParticuleCR() permet de créer une particule.
@@ -35,35 +32,31 @@ func CreatParticle() *Particle {
 		TypeSpeedY = -(rand.Float64()) * config.General.MaxSpeed
 	}
 
-	if config.General.CercleShape {
-		var axeX = config.General.WindowSizeX / 2
-		var axeY = config.General.WindowSizeY / 2
+	// if config.General.CercleShape {
+	// 	var axeX = config.General.WindowSizeX / 2
+	// 	var axeY = config.General.WindowSizeY / 2
 
-		if config.General.CursorCercle {
-			axeX, axeY = ebiten.CursorPosition()
-		}
-		var i float64 = rand.Float64()
-		var e float64 = rand.Float64()
-		PosX = config.General.CercleRadius * math.Cos(e*math.Pi/i)
-		PosY = config.General.CercleRadius * math.Sin(e*math.Pi/i)
-		PosX = PosX + float64(axeX)
-		PosY = PosY + float64(axeY)
-	}
-	if config.General.CercleSpeed {
-		e := math.Atan(20)
-		TypeSpeedX = config.General.CercleRadius * math.Cos(e)
-		TypeSpeedY = config.General.CercleRadius * math.Sin(e)
-	}
+	// 	if config.General.CursorCercle {
+	// 		axeX, axeY = ebiten.CursorPosition()
+	// 	}
+	// 	var i float64 = rand.Float64()
+	// 	var e float64 = rand.Float64()
+	// 	PosX = config.General.CercleRadius * math.Cos(e*math.Pi/i)
+	// 	PosY = config.General.CercleRadius * math.Sin(e*math.Pi/i)
+	// 	PosX = PosX + float64(axeX)
+	// 	PosY = PosY + float64(axeY)
+	// }
 
 	var particule Particle = Particle{
 		PositionX: PosX,
 		PositionY: PosY,
 		ScaleX:    0.5, ScaleY: 0.5,
 		ColorRed: 1, ColorGreen: 0, ColorBlue: 1,
-		SpeedX:   TypeSpeedX,
-		SpeedY:   TypeSpeedY,
-		Opacity:  1,
-		LifeRate: 0,
+		SpeedX:     TypeSpeedX,
+		SpeedY:     TypeSpeedY,
+		Opacity:    1,
+		LifeRate:   0,
+		ExDistance: 0,
 	}
 
 	return &particule
