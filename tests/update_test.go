@@ -38,3 +38,5 @@ func TestRandomSpawnUpdate(t *testing.T) {
 		t.Error("Les particules ne sont pas crées au cours du temps alors que cela devraient être possible.")
 	}
 }
+
+//Test qui vérifi que la vitesse n'est bien pas la même si speedy est avec gravité et sans a la fin

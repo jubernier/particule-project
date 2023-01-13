@@ -16,15 +16,20 @@ func (s *System) Update() {
 		// do something with e.Value
 		particule, ok := e.Value.(*Particle)
 		if ok {
-			/*
-				if config.General.CercleShape {
-					particule.SpeedX = particule.PositionX * math.Cos(e*math.Pi/i)
-					particule.SpeedY = particule.PositionY * math.Sin(e*math.Pi/i)
-				}*/
-			particule.SpeedY = particule.SpeedY + config.General.Gravity
+			if config.General.Gravity {
+				particule.SpeedY = particule.SpeedY + config.General.GravityCoefficient
+			}
+
 			particule.PositionX = particule.PositionX + particule.SpeedX
 			particule.PositionY = particule.PositionY + particule.SpeedY
 			particule.LifeRate++
+
+			if config.General.Margin {
+				if particule.PositionX >= float64(config.General.WindowSizeX) || particule.PositionX < 0 || particule.PositionY > float64(config.General.WindowSizeY) {
+					particule.PositionX = float64(config.General.WindowSizeX) + 100
+					go s.Content.Remove(e)
+				}
+			}
 
 			if config.General.Design {
 				particule.DesignParticle()
@@ -35,12 +40,7 @@ func (s *System) Update() {
 			} else if config.General.OpacityRate == 2 {
 				particule.DecreaseOpacity()
 			}
-			if config.General.Margin {
-				if particule.PositionX >= float64(config.General.WindowSizeX) || particule.PositionX < 0 || particule.PositionY > float64(config.General.WindowSizeY) {
-					particule.PositionX = float64(config.General.WindowSizeX) + 100
-					go s.Content.Remove(e)
-				}
-			}
+
 			if particule.LifeRate >= config.General.LifeRate {
 				s.Content.MoveToBack(e)
 				config.NumberDeath++

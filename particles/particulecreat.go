@@ -5,6 +5,8 @@ import (
 	"math/rand"
 	"project-particles/config"
 	"time"
+
+	"github.com/hajimehoshi/ebiten/v2"
 )
 
 // La fonction ParticuleCR() permet de créer une particule.
@@ -36,6 +38,10 @@ func CreatParticle() *Particle {
 	if config.General.CercleShape {
 		var axeX = config.General.WindowSizeX / 2
 		var axeY = config.General.WindowSizeY / 2
+
+		if config.General.CursorCercle {
+			axeX, axeY = ebiten.CursorPosition()
+		}
 		var i float64 = rand.Float64()
 		var e float64 = rand.Float64()
 		PosX = config.General.CercleRadius * math.Cos(e*math.Pi/i)
@@ -43,11 +49,16 @@ func CreatParticle() *Particle {
 		PosX = PosX + float64(axeX)
 		PosY = PosY + float64(axeY)
 	}
+	if config.General.CercleSpeed {
+		e := math.Atan(20)
+		TypeSpeedX = config.General.CercleRadius * math.Cos(e)
+		TypeSpeedY = config.General.CercleRadius * math.Sin(e)
+	}
 
 	var particule Particle = Particle{
 		PositionX: PosX,
 		PositionY: PosY,
-		ScaleX:    1, ScaleY: 1,
+		ScaleX:    0.5, ScaleY: 0.5,
 		ColorRed: 1, ColorGreen: 0, ColorBlue: 1,
 		SpeedX:   TypeSpeedX,
 		SpeedY:   TypeSpeedY,
