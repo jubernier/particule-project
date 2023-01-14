@@ -7,7 +7,7 @@ import (
 	"time"
 )
 
-func AddParticule(s *System) {
+func RecycleParticule(s *System) {
 	rand.Seed(time.Now().UnixNano())
 	var PosX float64 = float64(config.General.SpawnX)
 	var PosY float64 = float64(config.General.SpawnY)
