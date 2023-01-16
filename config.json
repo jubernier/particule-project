@@ -16,6 +16,7 @@
 	"AddLifeToParticle": true,
 	"LifeRate": 100,
 	"Margin": true,
+	"MargeCoefficient":0,
 	"Design": false,
 	"OpacityRate": 0,
 	"CursorCercle": false, 

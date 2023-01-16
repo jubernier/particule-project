@@ -27,7 +27,6 @@ func RecycleParticule(s *System) {
 		TypeSpeedY = -(rand.Float64()) * config.General.MaxSpeed
 	}
 
-
 	e := s.Content.Back()
 	particule, _ := e.Value.(*Particle)
 	particule.ColorGreen = 1

@@ -20,9 +20,10 @@ type Config struct {
 	TypeSpeed                int
 	Gravity                  bool
 	GravityCoefficient       float64
-	AddLifeToParticle		 bool
+	AddLifeToParticle        bool
 	LifeRate                 float64
 	Margin                   bool
+	MargeCoefficient         float64
 	Design                   bool
 	OpacityRate              int
 	CursorCercle             bool

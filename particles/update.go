@@ -15,6 +15,7 @@ func (s *System) Update() {
 	for e := s.Content.Front(); e != nil && comptetour < s.Content.Len()-config.NumberDeath; e = e.Next() {
 		// do something with e.Value
 		particule, ok := e.Value.(*Particle)
+
 		if ok {
 
 			particule.UpdatePosition()
@@ -24,8 +25,10 @@ func (s *System) Update() {
 			}
 
 			if config.General.Margin {
-				if particule.PositionX >= float64(config.General.WindowSizeX) || particule.PositionX < 0 || particule.PositionY > float64(config.General.WindowSizeY) {
-					go s.Content.Remove(e)
+				if particule.PositionX <= -config.General.MargeCoefficient ||
+					particule.PositionY <= -config.General.MargeCoefficient ||
+					particule.PositionX >= float64(config.General.WindowSizeX)+config.General.MargeCoefficient ||
+					particule.PositionY >= float64(config.General.WindowSizeY)+config.General.MargeCoefficient {
 					config.NumberDeath++
 				}
 			}
@@ -44,7 +47,6 @@ func (s *System) Update() {
 				if particule.LifeRate >= config.General.LifeRate {
 					s.Content.MoveToBack(e)
 					config.NumberDeath++
-	
 				}
 			}
 			comptetour++
