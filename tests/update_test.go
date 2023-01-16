@@ -33,7 +33,7 @@ func TestRandomSpawnUpdate(t *testing.T) {
 	l.PushFront(particles.CreatParticle())
 	var systema *particles.System = &particles.System{Content: l}
 	var systemb *particles.System = &particles.System{Content: list.New()}
-	systema.Update()
+	systema.Update() //changer nom system ou add comments
 	if systema.Content.Len() == systemb.Content.Len() {
 		t.Error("Les particules ne sont pas crées au cours du temps alors que cela devraient être possible.")
 	}

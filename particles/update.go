@@ -16,13 +16,8 @@ func (s *System) Update() {
 		// do something with e.Value
 		particule, ok := e.Value.(*Particle)
 		if ok {
-			if config.General.Gravity {
-				particule.SpeedY = particule.SpeedY + config.General.GravityCoefficient
-			}
 
-			particule.PositionX = particule.PositionX + particule.SpeedX
-			particule.PositionY = particule.PositionY + particule.SpeedY
-			particule.LifeRate++
+			particule.UpdatePosition()
 
 			if config.General.CercleSpeed {
 				particule.Velocity()
@@ -31,6 +26,7 @@ func (s *System) Update() {
 			if config.General.Margin {
 				if particule.PositionX >= float64(config.General.WindowSizeX) || particule.PositionX < 0 || particule.PositionY > float64(config.General.WindowSizeY) {
 					go s.Content.Remove(e)
+					config.NumberDeath++
 				}
 			}
 
@@ -44,10 +40,12 @@ func (s *System) Update() {
 				particule.DecreaseOpacity()
 			}
 
-			if particule.LifeRate >= config.General.LifeRate {
-				s.Content.MoveToBack(e)
-				config.NumberDeath++
-
+			if config.General.AddLifeToParticle {
+				if particule.LifeRate >= config.General.LifeRate {
+					s.Content.MoveToBack(e)
+					config.NumberDeath++
+	
+				}
 			}
 			comptetour++
 		}

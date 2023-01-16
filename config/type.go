@@ -20,6 +20,7 @@ type Config struct {
 	TypeSpeed                int
 	Gravity                  bool
 	GravityCoefficient       float64
+	AddLifeToParticle		 bool
 	LifeRate                 float64
 	Margin                   bool
 	Design                   bool

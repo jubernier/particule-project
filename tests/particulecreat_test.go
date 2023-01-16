@@ -9,7 +9,7 @@ import (
 // Test pour vérifier que la particule a bien été créer.
 func TestPartCreat(t *testing.T) {
 	var listeParticule []particles.Particle
-	listeParticule = append(listeParticule, *particles.CreatParticle())
+	listeParticule = append(listeParticule, *particles.CreatParticle())//modifier tests pour ensemble  du système
 	if len(listeParticule) != 1 {
 		t.Error("La fonction ne crée pas une particule et pourtant elle devrait.")
 	}

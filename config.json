@@ -13,6 +13,7 @@
 	"TypeSpeed": 0,
 	"Gravity": false,
 	"GravityCoefficient": 0,
+	"AddLifeToParticle": true,
 	"LifeRate": 100,
 	"Margin": true,
 	"Design": false,
