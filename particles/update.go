@@ -1,6 +1,7 @@
 package particles
 
 import (
+	"container/list"
 	"project-particles/config"
 )
 
@@ -12,8 +13,9 @@ var indice float64
 func (s *System) Update() {
 	var comptetour int
 	indice = indice + config.General.SpawnRate - float64(int(config.General.SpawnRate))
-	
-	for e := s.Content.Front(); e != nil && comptetour < s.Content.Len()-config.NumberDeath; e = e.Next() {
+	var eNext *list.Element
+	for e := s.Content.Front(); e != nil && comptetour < s.Content.Len()-config.NumberDeath; e = eNext {
+		eNext = e.Next()
 		// do something with e.Value
 		particule, ok := e.Value.(*Particle)
 
@@ -45,6 +47,7 @@ func (s *System) Update() {
 			}
 
 			if config.General.AddLifeToParticle {
+				particule.LifeRate++
 				if particule.LifeRate >= config.General.LifeRate {
 					s.Content.MoveToBack(e)
 					config.NumberDeath++

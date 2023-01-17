@@ -14,7 +14,7 @@ import (
 // main est la fonction principale du projet.Elle initialise la fenêtre d'affichage, puis elle crée un système de particules encapsulé dans un "game" et appelle la fonction RunGame qui se charge de faire les mise-à-jour (Update) et affichages (Draw) de manière  régulière.
 func main() {
 	rand.Seed(time.Now().UnixNano())
-	config.Get("config.json")
+	config.Get("config/config1.json")
 	assets.Get()
 
 	ebiten.SetWindowTitle(config.General.WindowTitle)

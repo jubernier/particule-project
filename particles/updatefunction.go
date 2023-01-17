@@ -14,7 +14,6 @@ func (particle *Particle) UpdatePosition() {
 	}
 	particle.PositionX += particle.SpeedX
 	particle.PositionY += particle.SpeedY
-	particle.LifeRate++
 }
 
 func (particle *Particle) DesignParticle() {
@@ -50,7 +49,7 @@ func (particle *Particle) Velocity() {
 	distanceX := float64(config.General.WindowSizeX/2) - (particle.PositionX)
 	distanceY := float64(config.General.WindowSizeY/2) - (particle.PositionY)
 	distance := math.Sqrt((distanceX * distanceX) + (distanceY * distanceY))
-	if distanceX/distance < 100.0 {
+	if distanceX/distance < 100 {
 		particle.SpeedX += distanceX / distance
 	}
 	if distanceY/distance < 100 {
