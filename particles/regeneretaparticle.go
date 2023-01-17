@@ -3,11 +3,19 @@ package particles
 import (
 	"math/rand"
 	"project-particles/config"
-	"time"
 )
 
 func RecycleParticule(s *System) {
-	rand.Seed(time.Now().UnixNano())
+
+	var	colorblue = config.General.ColorBlue
+	var	colorgreen = config.General.ColorGreen
+	var	colorred = config.General.ColorRed
+	if config.General.ColorRandom {
+		colorblue = rand.Float64()
+		colorgreen = rand.Float64()
+		colorred = rand.Float64()
+	}
+	
 	var PosX float64 = float64(config.General.SpawnX)
 	var PosY float64 = float64(config.General.SpawnY)
 	if config.General.RandomSpawn {
@@ -29,8 +37,9 @@ func RecycleParticule(s *System) {
 
 	e := s.Content.Back()
 	particule, _ := e.Value.(*Particle)
-	particule.ColorGreen = 1
-	particule.ColorRed = 1
+	particule.ColorBlue = colorblue
+	particule.ColorGreen = colorgreen
+	particule.ColorRed = colorred
 	particule.Opacity = 1
 	particule.SpeedX = TypeSpeedX
 	particule.SpeedY = TypeSpeedY
@@ -39,5 +48,7 @@ func RecycleParticule(s *System) {
 	particule.LifeRate = 0
 	s.Content.MoveToFront(e)
 
-	particule.CircleShape()
+	if config.General.CercleShape {
+		particule.CircleShape()
+	}
 }

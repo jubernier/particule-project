@@ -3,7 +3,6 @@ package particles
 import (
 	"math/rand"
 	"project-particles/config"
-	"time"
 )
 
 // La fonction ParticuleCR() permet de créer une particule.
@@ -13,7 +12,15 @@ import (
 // Plus exactement, TypeSpeed permet de décidé dans qu'elle direction vont les particules.
 func CreatParticle() *Particle {
 
-	rand.Seed(time.Now().UnixNano())
+	var	colorblue = config.General.ColorBlue
+	var	colorgreen = config.General.ColorGreen
+	var	colorred = config.General.ColorRed
+	if config.General.ColorRandom {
+		colorblue = rand.Float64()
+		colorgreen = rand.Float64()
+		colorred = rand.Float64()
+	}
+
 	var PosX float64 = float64(config.General.SpawnX)
 	var PosY float64 = float64(config.General.SpawnY)
 	if config.General.RandomSpawn {
@@ -37,7 +44,7 @@ func CreatParticle() *Particle {
 		PositionX: PosX,
 		PositionY: PosY,
 		ScaleX:    0.5, ScaleY: 0.5,
-		ColorRed: 1, ColorGreen: 0, ColorBlue: 1,
+		ColorRed: colorred, ColorGreen: colorgreen, ColorBlue: colorblue,
 		SpeedX:     TypeSpeedX,
 		SpeedY:     TypeSpeedY,
 		Opacity:    1,

@@ -56,8 +56,8 @@ func TestUpdateGravity(t *testing.T) {
 		t.Error("Les particules ne devraient subir la gravité ce n'est pas le cas ici.")
 	}
 }
-
 /*
+//Test si les particules meurt bien a la fin de leur vie.
 func TestUpdateLifeRate(t *testing.T) {
 	config.General.AddLifeToParticle = true
 	config.General.LifeRate = 10
@@ -66,11 +66,28 @@ func TestUpdateLifeRate(t *testing.T) {
 
 	S := particles.NewSystem()
 	for i := 0; i < len(S.Content); i++ {
-		if config.General.LifeRate !=
-		//que que quoiiiiiiii
+		if config.NumberDeath == 0 {
+			t.Error("La particule devrait mourir et pourtant ce n'est pas la cas.")
+		}
 	}
 }
 */
+//Test si une particule quand sa position dépasse les marges est bien morte.
+func TestUpdateMargin(t *testing.T) {
+	config.General.Margin = true
+	config.General.MargeCoefficient = 0
+	config.General.RandomSpawn = false
+	config.General.SpawnX = WindowSizeX+100
+	var l *list.List = list.New()
+	l.PushFront(particles.CreatParticle())
+	var SystemEx *particles.System = &particles.System{Content: l}
+	var particule *particles.Particle = l.Front().Value.(*particles.Particle)
+	SystemEx.Update()
+	if config.NumberDeath == 0 {
+		t.Error("La particule devrait mourir car elle apparait au delà de la marge extérieur et pourtant ce n'est pas le cas.")
+	}
+}
+
 
 /*
 func TestUpdateWithoutLifeRate(t *testing.T) {

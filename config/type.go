@@ -16,6 +16,10 @@ type Config struct {
 	RandomSpawn              bool
 	SpawnX, SpawnY           int
 	SpawnRate                float64
+	ColorRandom				 bool
+	ColorRed				 float64
+	ColorGreen				 float64
+	ColorBlue				 float64
 	MaxSpeed                 float64
 	TypeSpeed                int
 	Gravity                  bool

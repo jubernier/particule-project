@@ -12,6 +12,7 @@ var indice float64
 func (s *System) Update() {
 	var comptetour int
 	indice = indice + config.General.SpawnRate - float64(int(config.General.SpawnRate))
+	
 	for e := s.Content.Front(); e != nil && comptetour < s.Content.Len()-config.NumberDeath; e = e.Next() {
 		// do something with e.Value
 		particule, ok := e.Value.(*Particle)
@@ -63,5 +64,4 @@ func (s *System) Update() {
 		s.Content.PushFront(CreatParticle())
 		indice--
 	}
-
 }
