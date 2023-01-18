@@ -23,9 +23,10 @@
 	"MargeCoefficient":0,
 	"Design": false,
 	"OpacityRate": 0,
-	"CursorCercle":false, 
+	"CursorCercle":true, 
 	"CercleShape": true,
 	"CercleRadius" : 200,
 	"CercleSpeed":true,
-	"RotationSpeed":10
+	"RotationSpeed":10,
+	"MouseMouvement":true
 }

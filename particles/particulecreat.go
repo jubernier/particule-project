@@ -12,9 +12,9 @@ import (
 // Plus exactement, TypeSpeed permet de décidé dans qu'elle direction vont les particules.
 func CreatParticle() *Particle {
 
-	var	colorblue = config.General.ColorBlue
-	var	colorgreen = config.General.ColorGreen
-	var	colorred = config.General.ColorRed
+	var colorblue = config.General.ColorBlue
+	var colorgreen = config.General.ColorGreen
+	var colorred = config.General.ColorRed
 	if config.General.ColorRandom {
 		colorblue = rand.Float64()
 		colorgreen = rand.Float64()
@@ -43,7 +43,7 @@ func CreatParticle() *Particle {
 	var particule Particle = Particle{
 		PositionX: PosX,
 		PositionY: PosY,
-		ScaleX:    0.5, ScaleY: 0.5,
+		ScaleX:    0.2, ScaleY: 0.2,
 		ColorRed: colorred, ColorGreen: colorgreen, ColorBlue: colorblue,
 		SpeedX:     TypeSpeedX,
 		SpeedY:     TypeSpeedY,

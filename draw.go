@@ -50,18 +50,18 @@ func (g *game) Draw(screen *ebiten.Image) {
 	switch ConfigSelector {
 	case 0:
 		config.Get("config/config1.json")
-		ebitenutil.DebugPrintAt(screen, fmt.Sprint("< Config1 >"), (config.General.WindowSizeX/2)-15, 10)
+		ebitenutil.DebugPrintAt(screen, ("< Config1 >"), (config.General.WindowSizeX/2)-15, 10)
 	case 1:
 		config.Get("config/config2.json")
-		ebitenutil.DebugPrintAt(screen, fmt.Sprint("< Config2 >"), (config.General.WindowSizeX/2)-15, 10)
+		ebitenutil.DebugPrintAt(screen, ("< Config2 >"), (config.General.WindowSizeX/2)-15, 10)
 	case 2:
 		config.Get("config/config3.json")
-		ebitenutil.DebugPrintAt(screen, fmt.Sprint("< Config3 >"), (config.General.WindowSizeX/2)-15, 10)
-		/*case -1:
+		ebitenutil.DebugPrintAt(screen, ("< Config3 >"), (config.General.WindowSizeX/2)-15, 10)
+	case -1:
 		config.Get("config/config4.json")
-		ebitenutil.DebugPrintAt(screen, fmt.Sprint("< Config4 >"), (config.General.WindowSizeX/2)-15, 10)
-		*/
+		ebitenutil.DebugPrintAt(screen, ("< Config4 >"), (config.General.WindowSizeX/2)-15, 10)
 	}
+
 	if ebiten.IsKeyPressed(ebiten.KeyP) {
 		if config.General.ColorRandom {
 			config.General.ColorRandom = false
@@ -94,3 +94,33 @@ func (g *game) Draw(screen *ebiten.Image) {
 		}
 	}
 }
+
+// func Mouvement() {
+// 	if config.General.MouseMouvement {
+// 		// Déplacement à la souris
+// 		mx, my := ebiten.CursorPosition()
+
+// 		config.General.SpawnX, config.General.SpawnY = float64(mx), float64(my)
+
+// 	} else {
+// 		// Déplacement au clavier
+// 		if ebiten.IsKeyPressed(ebiten.KeyU) {
+// 			config.General.SpawnY--
+// 		}
+// 		if ebiten.IsKeyPressed(ebiten.KeyO) {
+// 			config.General.SpawnY++
+// 		}
+// 		if ebiten.IsKeyPressed(ebiten.KeyL) {
+// 			config.General.SpawnX--
+// 		}
+// 		if ebiten.IsKeyPressed(ebiten.KeyX) {
+// 			config.General.SpawnX++
+// 		}
+// 	}
+// }
+
+//Essayer de fixer le beug de tourbillon avec les touches dynamiques  chose que j'essaye de faire il y'a 3heures quelle honte !!
+// Remettre le cercle au centre de l'ecran a chaque fois
+// Essayer de refaire ca sur Update
+// pourquoi ma fonction mouvement ne marche pas  + regler ca tomorrow
+// Faire le Redmi et terminer les tests

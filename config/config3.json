@@ -28,5 +28,6 @@
 	"CercleShape": false,
 	"CercleRadius" : 200,
 	"CercleSpeed":false,
-	"RotationSpeed":10
+	"RotationSpeed":10,
+	"MouseMouvement":true
 }
