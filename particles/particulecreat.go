@@ -12,6 +12,13 @@ import (
 // Plus exactement, TypeSpeed permet de décidé dans qu'elle direction vont les particules.
 func CreatParticle() *Particle {
 
+	var PosX float64 = float64(config.General.SpawnX)
+	var PosY float64 = float64(config.General.SpawnY)
+	if config.General.RandomSpawn {
+		PosX = rand.Float64() * float64(config.General.WindowSizeX)
+		PosY = rand.Float64() * float64(config.General.WindowSizeY)
+	}
+	var rotation float64 = 0
 	var colorblue = config.General.ColorBlue
 	var colorgreen = config.General.ColorGreen
 	var colorred = config.General.ColorRed
@@ -19,13 +26,6 @@ func CreatParticle() *Particle {
 		colorblue = rand.Float64()
 		colorgreen = rand.Float64()
 		colorred = rand.Float64()
-	}
-
-	var PosX float64 = float64(config.General.SpawnX)
-	var PosY float64 = float64(config.General.SpawnY)
-	if config.General.RandomSpawn {
-		PosX = rand.Float64() * float64(config.General.WindowSizeX)
-		PosY = rand.Float64() * float64(config.General.WindowSizeY)
 	}
 
 	var indice []int = []int{1, -1}
@@ -39,15 +39,19 @@ func CreatParticle() *Particle {
 		TypeSpeedX = -(rand.Float64()) * config.General.MaxSpeed
 		TypeSpeedY = -(rand.Float64()) * config.General.MaxSpeed
 	}
+	var scaleX = config.General.SizeX
+	var scaleY = config.General.SizeY
+	var opacity float64 = config.General.Opacity
 
 	var particule Particle = Particle{
 		PositionX: PosX,
 		PositionY: PosY,
-		ScaleX:    0.2, ScaleY: 0.2,
+		Rotation:  rotation,
+		ScaleX:    scaleX, ScaleY: scaleY,
 		ColorRed: colorred, ColorGreen: colorgreen, ColorBlue: colorblue,
 		SpeedX:     TypeSpeedX,
 		SpeedY:     TypeSpeedY,
-		Opacity:    1,
+		Opacity:    opacity,
 		LifeRate:   0,
 		ExDistance: 0,
 	}

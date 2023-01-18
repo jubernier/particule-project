@@ -36,8 +36,8 @@ func (s *System) Update() {
 				}
 			}
 
-			if config.General.Design {
-				particule.DesignParticle()
+			if config.General.ChangeSize {
+				particule.SizeModification()
 			}
 
 			if config.General.OpacityRate == 1 {

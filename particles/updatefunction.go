@@ -4,8 +4,6 @@ import (
 	"math"
 	"math/rand"
 	"project-particles/config"
-
-	"github.com/hajimehoshi/ebiten/v2"
 )
 
 func (particle *Particle) UpdatePosition() {
@@ -16,12 +14,6 @@ func (particle *Particle) UpdatePosition() {
 	particle.PositionY += particle.SpeedY
 }
 
-func (particle *Particle) DesignParticle() {
-	particle.ColorBlue = 0
-	particle.ScaleX = 1.5
-	particle.Rotation = 1.5
-}
-
 func (particle *Particle) IncreaseOpacity() {
 	particle.Opacity = particle.Opacity + 0.1
 }
@@ -30,20 +22,13 @@ func (particle *Particle) DecreaseOpacity() {
 	particle.Opacity = particle.Opacity - 0.1
 }
 
-func (particle *Particle) CircleShape() {
-
-	var axeX = config.General.WindowSizeX / 2
-	var axeY = config.General.WindowSizeY / 2
-
-	if config.General.CursorCercle {
-		axeX, axeY = ebiten.CursorPosition()
+func (particle *Particle) SizeModification() {
+	if config.General.RandomSize {
+		particle.ScaleX = particle.ScaleX * rand.Float64()
+		particle.ScaleY = particle.ScaleX * rand.Float64()
 	}
-	var i float64 = rand.Float64()
-	var e float64 = rand.Float64()
-	particle.PositionX = config.General.CercleRadius * math.Cos(e*math.Pi/i)
-	particle.PositionY = config.General.CercleRadius * math.Sin(e*math.Pi/i)
-	particle.PositionX += float64(axeX)
-	particle.PositionY += float64(axeY)
+	particle.ScaleX -= 0.1
+	particle.ScaleY -= 0.1
 }
 
 func (particle *Particle) Velocity() {

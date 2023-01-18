@@ -69,12 +69,25 @@ func TestCercleShape(t *testing.T) {
 	var distance = config.General.CercleRadius
 	var formuleX = distance * math.Cos(1*math.Pi/1)
 	var formuleY = distance * math.Sin(1*math.Pi/1)
-	var particle *particles.Particle = particles.CreatParticle()
-	particle.PositionX -= float64(config.General.WindowSizeX) / 2
-	particle.PositionY -= float64(config.General.WindowSizeX) / 2
-	if particle.PositionX > formuleX && particle.PositionY > formuleY {
-		fmt.Println(formuleX)
-		fmt.Println(particle.PositionX)
-		t.Error()
+	for i := 0; i < 1000; i++ {
+		var particle *particles.Particle = particles.CreatParticle()
+		particle.PositionX -= float64(config.General.WindowSizeX) / 2
+		particle.PositionY -= float64(config.General.WindowSizeX) / 2
+		if particle.PositionX > formuleX && particle.PositionY > formuleY {
+			fmt.Println(formuleX)
+			fmt.Println(particle.PositionX)
+			t.Error()
+		}
 	}
 }
+
+/*
+func TestMoveCursor(t *testing.T) {
+	config.General.CercleShape = true
+	config.General.CursorCercle = true
+	var particle *particles.Particle = particles.CreatParticle()
+	axeX, axeY := ebiten.CursorPosition()
+	if particle.CircleShape().axeX == axeX && CircleShape().axeY != axeY {
+		t.Error()
+	}
+}*/

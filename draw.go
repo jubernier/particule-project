@@ -29,7 +29,7 @@ func (g *game) Draw(screen *ebiten.Image) {
 
 	if config.General.Debug {
 		ebitenutil.DebugPrint(screen, fmt.Sprint(ebiten.CurrentTPS()))
-		ebitenutil.DebugPrintAt(screen, fmt.Sprint(g.system.Content.Len()), 0, 30)
+		ebitenutil.DebugPrintAt(screen, fmt.Sprint("Nombre de particules actuels :", g.system.Content.Len()), 0, 30)
 	}
 	var MaxNbConfig = 2
 	if ebiten.IsKeyPressed(ebiten.KeyArrowLeft) {
@@ -49,50 +49,15 @@ func (g *game) Draw(screen *ebiten.Image) {
 	}
 	switch ConfigSelector {
 	case 0:
-		config.Get("config/config1.json")
 		ebitenutil.DebugPrintAt(screen, ("< Config1 >"), (config.General.WindowSizeX/2)-15, 10)
 	case 1:
-		config.Get("config/config2.json")
 		ebitenutil.DebugPrintAt(screen, ("< Config2 >"), (config.General.WindowSizeX/2)-15, 10)
 	case 2:
-		config.Get("config/config3.json")
 		ebitenutil.DebugPrintAt(screen, ("< Config3 >"), (config.General.WindowSizeX/2)-15, 10)
 	case -1:
-		config.Get("config/config4.json")
 		ebitenutil.DebugPrintAt(screen, ("< Config4 >"), (config.General.WindowSizeX/2)-15, 10)
 	}
 
-	if ebiten.IsKeyPressed(ebiten.KeyP) {
-		if config.General.ColorRandom {
-			config.General.ColorRandom = false
-			config.General.ColorRed, config.General.ColorBlue, config.General.ColorGreen = 1, 1, 0 //Color purple
-		}
-	} else if ebiten.IsKeyPressed(ebiten.KeyA) { //La touche A représente la touche Q en systeme européen
-		if config.General.ColorRandom {
-			config.General.ColorRandom = false
-			config.General.ColorRed, config.General.ColorBlue, config.General.ColorGreen = 0, 1, 1 //Color Aqua
-		}
-	} else if ebiten.IsKeyPressed(ebiten.KeyY) {
-		if config.General.ColorRandom {
-			config.General.ColorRandom = false
-			config.General.ColorRed, config.General.ColorBlue, config.General.ColorGreen = 1, 0, 1 //Color Yellow
-		}
-	} else if ebiten.IsKeyPressed(ebiten.KeyR) {
-		if config.General.ColorRandom {
-			config.General.ColorRandom = false
-			config.General.ColorRed, config.General.ColorBlue, config.General.ColorGreen = 1, 0, 0 //Color Red
-		}
-	} else if ebiten.IsKeyPressed(ebiten.KeyB) {
-		if config.General.ColorRandom {
-			config.General.ColorRandom = false
-			config.General.ColorRed, config.General.ColorBlue, config.General.ColorGreen = 0, 1, 0 //Color Blue
-		}
-	} else if ebiten.IsKeyPressed(ebiten.KeyG) {
-		if config.General.ColorRandom {
-			config.General.ColorRandom = false
-			config.General.ColorRed, config.General.ColorBlue, config.General.ColorGreen = 0, 0, 1 //Color Green
-		}
-	}
 }
 
 // func Mouvement() {

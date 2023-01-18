@@ -28,14 +28,19 @@ type Config struct {
 	LifeRate                 float64
 	Margin                   bool
 	MargeCoefficient         float64
-	Design                   bool
-	OpacityRate              int
-	CursorCercle             bool
-	CercleShape              bool
-	CercleRadius             float64
-	CercleSpeed              bool
-	RotationSpeed            float64
-	MouseMouvement           bool
+	ChangeSize               bool
+	RandomSize               bool
+
+	OpacityRate    int
+	CursorCercle   bool
+	CercleShape    bool
+	CercleRadius   float64
+	CercleSpeed    bool
+	RotationSpeed  float64
+	MouseMouvement bool
+	Opacity        float64
+	SizeX          float64
+	SizeY          float64
 }
 
 var General Config
