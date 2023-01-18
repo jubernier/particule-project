@@ -13,7 +13,7 @@ func (particle *Particle) CircleShape() {
 	var axeX = config.General.WindowSizeX / 2
 	var axeY = config.General.WindowSizeY / 2
 
-	if config.General.CursorCercle {
+	if config.General.MoveCursor {
 		axeX, axeY = ebiten.CursorPosition()
 	}
 	var i float64 = rand.Float64()

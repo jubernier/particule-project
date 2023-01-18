@@ -4,7 +4,7 @@
   "WindowSizeY": 600,
 	"ParticleImage": "assets/particle.png",
 	"Debug": true,
-	"InitNumParticles": 0,
+	"InitNumParticles": 102,
 	"RandomSpawn": true,
 	"SpawnX": 400,
 	"SpawnY": 400,
@@ -12,6 +12,7 @@
 	"Opacity":1,
 	"SizeX":0.5,
 	"SizeY":0.5,
+	"Multicolor": false,
 	"ColorRandom":true,
 	"ColorRed": 0.6,
 	"ColorGreen": 0.6,
@@ -27,9 +28,9 @@
 	"ChangeSize": false,
 	"RandomSize": false,
 	"OpacityRate": 0,
-	"CursorCercle":true, 
+	"MoveCursor":true, 
 	"CercleShape": true,
 	"CercleRadius" : 100,
-	"CercleSpeed":true,
+	"CercleMouvement":true,
 	"RotationSpeed":10
 }

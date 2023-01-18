@@ -21,23 +21,6 @@ func TestRegenerateParticleSpawn(t *testing.T) {
 	}
 }
 
-/*
-func TestRegenerateParticleCercle(t *testing.T) {
-	config.General.CursorCercle = true
-	axeX, axeY = ebiten.CursorPosition()
-
-	config.General.CercleShape = true
-	var l *list.List = list.New()
-	l.PushFront(particles.CreatParticle())
-	var SystemBis *particles.System = &particles.System{Content: l}
-	var particule *particles.Particle = l.Front().Value.(*particles.Particle)
-	particles.RecycleParticule(SystemBis)
-	if particule.PositionX != particule.PositionX + regenerateparticles.CircleShape().axeX {
-		t.Error()
-	}
-}
-*/
-
 // Test qui permet de vérifier si les particules ne dépassent pas le paramétre MaxSpeed
 func TestRegenerateParticleSpeed(t *testing.T) {
 	config.General.TypeSpeed = 2

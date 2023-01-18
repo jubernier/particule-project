@@ -64,7 +64,7 @@ func TestTypeSpeed(t *testing.T) {
 
 func TestCercleShape(t *testing.T) {
 	config.General.CercleShape = true
-	config.General.CursorCercle = false
+	config.General.MoveCursor = false
 	config.General.CercleRadius = 40
 	var distance = config.General.CercleRadius
 	var formuleX = distance * math.Cos(1*math.Pi/1)
@@ -82,12 +82,11 @@ func TestCercleShape(t *testing.T) {
 }
 
 /*
-func TestMoveCursor(t *testing.T) {
-	config.General.CercleShape = true
-	config.General.CursorCercle = true
-	var particle *particles.Particle = particles.CreatParticle()
+func TestCursorCercleInitiale(t *testing.T) {
+	config.General.MoveCursor = true
 	axeX, axeY := ebiten.CursorPosition()
-	if particle.CircleShape().axeX == axeX && CircleShape().axeY != axeY {
+	if axeX == 0 && axeY == 0 {
 		t.Error()
 	}
-}*/
+}
+*/

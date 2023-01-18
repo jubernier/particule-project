@@ -16,6 +16,7 @@ type Config struct {
 	RandomSpawn              bool
 	SpawnX, SpawnY           int
 	SpawnRate                float64
+	Multicolor               bool
 	ColorRandom              bool
 	ColorRed                 float64
 	ColorGreen               float64
@@ -31,16 +32,16 @@ type Config struct {
 	ChangeSize               bool
 	RandomSize               bool
 
-	OpacityRate    int
-	CursorCercle   bool
-	CercleShape    bool
-	CercleRadius   float64
-	CercleSpeed    bool
-	RotationSpeed  float64
-	MouseMouvement bool
-	Opacity        float64
-	SizeX          float64
-	SizeY          float64
+	OpacityRate     int
+	MoveCursor      bool
+	CercleShape     bool
+	CercleRadius    float64
+	CercleMouvement bool
+	RotationSpeed   float64
+	MouseMouvement  bool
+	Opacity         float64
+	SizeX           float64
+	SizeY           float64
 }
 
 var General Config
