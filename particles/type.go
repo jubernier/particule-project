@@ -16,5 +16,5 @@ type Particle struct {
 	Opacity                         float64
 	SpeedX, SpeedY                  float64
 	LifeRate                        float64
-	ExDistance                      float64
+	ExDistance                      float64 //Variable permetant de définir l'ancienne distance (rayon) avant chaque rotation
 }

@@ -1,24 +1,25 @@
 {
 	"WindowTitle": "Project particles",
 	"WindowSizeX": 800,
-  	"WindowSizeY": 600,
+	"WindowSizeY": 600,
 	"ParticleImage": "assets/particle.png",
 	"Debug": true,
 
-	"InitNumParticles": 101,
+	"InitNumParticles": 1000,
 	"RandomSpawn": true,
 	"SpawnX": 400,
 	"SpawnY": 400,
 	"SpawnRate": 10,
 	
-	"SizeX":0.5,
-	"SizeY":0.5,
+	"SizeX":0.3,
+	"SizeY":0.3,
 	"Multicolor": false,
 	"ColorRandom": true,
 	"ColorRed": 0,
 	"ColorGreen": 0,
 	"ColorBlue":0,
 	"Opacity":1,
+	"OpacityRate": 0,
 
 	"MaxSpeed":5,
 	"TypeSpeed": 0,
@@ -27,15 +28,15 @@
 	"GravityCoefficient": 0,
 
 	"AddLifeToParticle": true,
-	"LifeRate": 100,
+	"LifeRate": 300,
 	"Margin": true,
 	"MargeCoefficient":0,
 	"ChangeSize": false,
 	"RandomSize": false,
-
+	
 	"MoveCursor":false, 
 	"CercleShape": true,
-	"CercleRadius" : 100,
-	"CercleMouvement":false,
+	"CercleRadius" : 200,
+	"CercleMouvement":true,
 	"RotationSpeed":10
 }

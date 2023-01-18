@@ -1,54 +1,29 @@
 package main
 
 import (
-	"fmt"
 	"project-particles/config"
-	"time"
 
 	"github.com/hajimehoshi/ebiten/v2"
 )
-
-var Current int
 
 // Update se charge d'appeler la fonction Update du système de particules
 // g.system. Elle est appelée automatiquement exactement 60 fois par seconde par
 // la bibliothèque Ebiten. Cette fonction ne devrait pas être modifiée sauf
 // pour les deux dernières extensions.
 func (g *game) Update() error {
-	var MaxNbConfig = 2
-	if ebiten.IsKeyPressed(ebiten.KeyArrowLeft) {
-		time.Sleep(time.Millisecond * 300)
-		if ConfigSelector == MaxNbConfig {
-			ConfigSelector = 0
-		} else {
-			ConfigSelector++
-		}
-	} else if ebiten.IsKeyPressed(ebiten.KeyArrowRight) {
-		time.Sleep(time.Millisecond * 300)
-		if ConfigSelector == 0 {
-			ConfigSelector = MaxNbConfig
-		} else {
-			ConfigSelector--
-		}
-	}
-	fmt.Println(ConfigSelector)
-	fmt.Println(Current)
-	if true {
-		Current = ConfigSelector
-		switch ConfigSelector {
-		case 0:
-			config.Get("config/config1.json")
-		case 1:
-			config.Get("config/config2.json")
-		case 2:
-			config.Get("config/config3.json")
-		}
-	}
-	// *g = game{system: particles.NewSystem()}
+	// Permet de passer d'une config à une autre .
 	if ebiten.IsKeyPressed(ebiten.KeyE) {
 		config.Get("config/config4.json")
+	} else if ebiten.IsKeyPressed(ebiten.KeyU) {
+		config.Get("config/config5.json")
+	} else if ebiten.IsKeyPressed(ebiten.KeyX) {
+		config.Get("config/config3.json")
+	} else if ebiten.IsKeyPressed(ebiten.KeyW) {
+		config.Get("config/config2.json")
+	} else if ebiten.IsKeyPressed(ebiten.KeySpace) {
+		config.Get("config/config1.json")
 	}
-
+	// Permet de modifier les couleurs en fonctions des touches
 	if ebiten.IsKeyPressed(ebiten.KeyP) {
 		if config.General.ColorRandom {
 			config.General.ColorRandom = false

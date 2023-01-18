@@ -31,14 +31,16 @@ func (g *game) Draw(screen *ebiten.Image) {
 		ebitenutil.DebugPrint(screen, fmt.Sprint(ebiten.CurrentTPS()))
 		ebitenutil.DebugPrintAt(screen, fmt.Sprint("Nombre de particules actuels :", g.system.Content.Len()), 0, 30)
 	}
-
-	switch ConfigSelector {
-	case 0:
-		ebitenutil.DebugPrintAt(screen, ("< Config1 >"), (config.General.WindowSizeX/2)-15, 10)
-	case 1:
-		ebitenutil.DebugPrintAt(screen, ("< Config2 >"), (config.General.WindowSizeX/2)-15, 10)
-	case 2:
+	//Permet d'afficher sur l'écran sur qu'elle config on ce situe
+	if ebiten.IsKeyPressed(ebiten.KeyE) {
+		ebitenutil.DebugPrintAt(screen, ("< Config4 >"), (config.General.WindowSizeX/2)-15, 10)
+	} else if ebiten.IsKeyPressed(ebiten.KeyU) {
+		ebitenutil.DebugPrintAt(screen, ("< Config5 >"), (config.General.WindowSizeX/2)-15, 10)
+	} else if ebiten.IsKeyPressed(ebiten.KeyX) {
 		ebitenutil.DebugPrintAt(screen, ("< Config3 >"), (config.General.WindowSizeX/2)-15, 10)
+	} else if ebiten.IsKeyPressed(ebiten.KeyW) {
+		ebitenutil.DebugPrintAt(screen, ("< Config2 >"), (config.General.WindowSizeX/2)-15, 10)
+	} else if ebiten.IsKeyPressed(ebiten.KeySpace) {
+		ebitenutil.DebugPrintAt(screen, ("< Config1 >"), (config.General.WindowSizeX/2)-15, 10)
 	}
-
 }

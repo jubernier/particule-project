@@ -6,7 +6,9 @@ import (
 	"project-particles/config"
 )
 
+// Définis la position des particules au cour du temps
 func (particle *Particle) UpdatePosition() {
+	// La gravité influx sur la postion Y de la particule
 	if config.General.Gravity {
 		particle.SpeedY += config.General.GravityCoefficient
 	}
@@ -14,12 +16,13 @@ func (particle *Particle) UpdatePosition() {
 	particle.PositionY += particle.SpeedY
 }
 
+// Définis la position des particules
 func (particle *Particle) IncreaseOpacity() {
-	particle.Opacity = particle.Opacity + 0.1
+	particle.Opacity = particle.Opacity + 0.05
 }
 
 func (particle *Particle) DecreaseOpacity() {
-	particle.Opacity = particle.Opacity - 0.1
+	particle.Opacity = particle.Opacity - 0.05
 }
 
 func (particle *Particle) SizeModification() {
@@ -31,12 +34,14 @@ func (particle *Particle) SizeModification() {
 	particle.ScaleY -= 0.1
 }
 
+// La couleur de chaque particule change en fonction du temps
 func (particle *Particle) Multicolor() {
 	particle.ColorBlue = rand.Float64()
 	particle.ColorGreen = rand.Float64()
 	particle.ColorRed = rand.Float64()
 }
 
+// Lorsque les particules spawn en formant un cercle, cette fonction définis leurs vitesses angulaires au sein du cercle.
 func (particle *Particle) Velocity() {
 	distanceX := float64(config.General.WindowSizeX/2) - (particle.PositionX)
 	distanceY := float64(config.General.WindowSizeY/2) - (particle.PositionY)

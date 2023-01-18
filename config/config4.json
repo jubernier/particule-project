@@ -4,34 +4,39 @@
   "WindowSizeY": 600,
 	"ParticleImage": "assets/particle.png",
 	"Debug": true,
-	"InitNumParticles": 104,
+
+	"InitNumParticles": 1000,
 	"RandomSpawn": false,
 	"SpawnX": 400,
 	"SpawnY": 400,
 	"SpawnRate": 10,
-	"Opacity":1,
+
 	"SizeX":0.5,
 	"SizeY":0.5,
 	"Multicolor": false,
 	"ColorRandom":true,
-	"ColorRed": 0.6,
-	"ColorGreen": 0.6,
-	"ColorBlue":0.6,
-	"MaxSpeed":5,
+	"ColorRed": 0,
+	"ColorGreen": 0,
+	"ColorBlue":0,
+	"Opacity":1,
+	"OpacityRate": 0,
+
+	"MaxSpeed":10,
 	"TypeSpeed": 0,
+
 	"Gravity": false,
 	"GravityCoefficient": 0,
+
 	"AddLifeToParticle": true,
 	"LifeRate": 100,
-	"Margin": true,
+	"Margin": false,
 	"MargeCoefficient":0,
 	"ChangeSize": false,
 	"RandomSize": false,
-	"OpacityRate": 0,
-	"CursorPosition":false,
+
 	"MoveCursor":false, 
 	"CercleShape": false,
 	"CercleRadius" : 100,
 	"CercleMouvement":false,
-	"RotationSpeed":10
+	"RotationSpeed":50
 }
