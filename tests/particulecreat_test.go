@@ -1,6 +1,8 @@
 package tests
 
 import (
+	"fmt"
+	"math"
 	"project-particles/config"
 	"project-particles/particles"
 	"testing"
@@ -57,5 +59,22 @@ func TestTypeSpeed(t *testing.T) {
 
 	if testparticle.SpeedX > 0 || testparticle.SpeedY > 0 {
 		t.Error("La vitesse devraient avoir une valeur négative.")
+	}
+}
+
+func TestCercleShape(t *testing.T) {
+	config.General.CercleShape = true
+	config.General.CursorCercle = false
+	config.General.CercleRadius = 40
+	var distance = config.General.CercleRadius
+	var formuleX = distance * math.Cos(1*math.Pi/1)
+	var formuleY = distance * math.Sin(1*math.Pi/1)
+	var particle *particles.Particle = particles.CreatParticle()
+	particle.PositionX -= float64(config.General.WindowSizeX) / 2
+	particle.PositionY -= float64(config.General.WindowSizeX) / 2
+	if particle.PositionX > formuleX && particle.PositionY > formuleY {
+		fmt.Println(formuleX)
+		fmt.Println(particle.PositionX)
+		t.Error()
 	}
 }

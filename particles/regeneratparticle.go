@@ -7,15 +7,15 @@ import (
 
 func RecycleParticule(s *System) {
 
-	var	colorblue = config.General.ColorBlue
-	var	colorgreen = config.General.ColorGreen
-	var	colorred = config.General.ColorRed
+	var colorblue = config.General.ColorBlue
+	var colorgreen = config.General.ColorGreen
+	var colorred = config.General.ColorRed
 	if config.General.ColorRandom {
 		colorblue = rand.Float64()
 		colorgreen = rand.Float64()
 		colorred = rand.Float64()
 	}
-	
+
 	var PosX float64 = float64(config.General.SpawnX)
 	var PosY float64 = float64(config.General.SpawnY)
 	if config.General.RandomSpawn {
@@ -48,6 +48,7 @@ func RecycleParticule(s *System) {
 	particule.LifeRate = 0
 	s.Content.MoveToFront(e)
 
+	//fait apparaitre les particules avec des positions qui forme un cercle/qui génere un cercle.
 	if config.General.CercleShape {
 		particule.CircleShape()
 	}

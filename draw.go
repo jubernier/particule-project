@@ -44,17 +44,23 @@ func (g *game) Draw(screen *ebiten.Image) {
 		} else {
 			ConfigSelector--
 		}
+	} else if ebiten.IsKeyPressed(ebiten.KeyArrowDown) {
+		ConfigSelector = -1
 	}
 	switch ConfigSelector {
 	case 0:
 		config.Get("config/config1.json")
-		ebitenutil.DebugPrintAt(screen, fmt.Sprint("< Config1 >"), (config.General.WindowSizeX/2)-10, 0)
+		ebitenutil.DebugPrintAt(screen, fmt.Sprint("< Config1 >"), (config.General.WindowSizeX/2)-15, 10)
 	case 1:
 		config.Get("config/config2.json")
-		ebitenutil.DebugPrintAt(screen, fmt.Sprint("< Config2 >"), (config.General.WindowSizeX/2)-10, 0)
+		ebitenutil.DebugPrintAt(screen, fmt.Sprint("< Config2 >"), (config.General.WindowSizeX/2)-15, 10)
 	case 2:
 		config.Get("config/config3.json")
-		ebitenutil.DebugPrintAt(screen, fmt.Sprint("< Config3 >"), (config.General.WindowSizeX/2)-10, 0)
+		ebitenutil.DebugPrintAt(screen, fmt.Sprint("< Config3 >"), (config.General.WindowSizeX/2)-15, 10)
+		/*case -1:
+		config.Get("config/config4.json")
+		ebitenutil.DebugPrintAt(screen, fmt.Sprint("< Config4 >"), (config.General.WindowSizeX/2)-15, 10)
+		*/
 	}
 	if ebiten.IsKeyPressed(ebiten.KeyP) {
 		if config.General.ColorRandom {

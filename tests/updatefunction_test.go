@@ -57,7 +57,7 @@ func TestUpdateGravity(t *testing.T) {
 	}
 }
 
-//Test si la particule vieillit bien a chaque appel de update.
+// Test si la particule vieillit bien a chaque appel de update.
 func TestUpdateLifeRate(t *testing.T) {
 	config.General.AddLifeToParticle = true
 	config.General.LifeRate = 10
@@ -71,7 +71,7 @@ func TestUpdateLifeRate(t *testing.T) {
 	}
 }
 
-//Test si les particules meurt bien a la fin de leur vie.
+// Test si les particules meurt bien a la fin de leur vie.
 func TestUpdateNumberDeath(t *testing.T) {
 	config.General.AddLifeToParticle = true
 	config.General.LifeRate = 1
@@ -84,7 +84,7 @@ func TestUpdateNumberDeath(t *testing.T) {
 	}
 }
 
-//Test si une particule quand sa position dépasse les marges est bien morte.
+// Test si une particule quand sa position dépasse les marges est bien morte.
 func TestUpdateMargin(t *testing.T) {
 	config.General.Margin = true
 	config.General.MargeCoefficient = 0
