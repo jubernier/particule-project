@@ -111,7 +111,6 @@ Pour passer d'une config.json à une autre il suffit d'utiliser les fléches du 
   - Vérifier si la position des particules est toujours situés dans l'écran (avec une marge)
   - Marge modifiable dans le fichier json (avec MargeCoefficient)
   - Lorsque la particule dépasse ces marges, la considérer comme morte (variable bool dans la structure d'une particule)
-  - Ne plus l'afficher (dans le fichier draw.go)
   - [x] Tests
 
 - [x] 5.3 - Durée de vie
@@ -121,16 +120,19 @@ Pour passer d'une config.json à une autre il suffit d'utiliser les fléches du 
   - L'opacitée d'une particule baisse automatiquement et en conséquences en fonction de sa durée de vie
   - [x] Tests
 
- -[x] 5.4 - Variation de transparence , couleur et échelle :
+-[x] 5.4 - Variation de transparence , couleur et échelle :
   - modifie la taille des particules au fil du  temps 
   - modifie la couleur des particules au fil du temps ainsi que la transparence dédinies par la variable "Opacity" dans config.json
     
   - [x] Tests
   
+- [x] 5.6 - Recyclage Optimisation de la mémoire 
+
+  - [x] Tests
+
 - [x] 5.7 - Forme du générateur
   - [x] Explosion
     - Définir si une particule est "explosive" ou non
-    - D'autres particules non explosives serront crées à partir de la position de la particule explosive
   - [x] Cercle 
   - [x] Explosion 
 
@@ -141,9 +143,7 @@ Pour passer d'une config.json à une autre il suffit d'utiliser les fléches du 
   - Les tests pour cette extension ne sont pas réalisables car elle nécéssite une action de l'utilisateur sur le clavier ou la souris.
 
 - [x] 5.10 - Modification dynamique du système de particules
-  - Lorsque la touche G est pressée, si le menu n'est pas affiché, il est affiché sinon il est caché (et ne permet plus la modification de valeurs)
-  - La navigation du menu se fait avec les touches + et -. Retour au premier paramètre du menu si on est au dernier, et au dernier si on est au premier.
-  - La modification des valeurs se fait par la molette, un paramètre permet de savoir si une valeur peut être négative et se bloque à 0 si ce n'est pas le cas.
+  - La modification de couleurs ainsi que de config à travers des touches .
   - Les tests pour cette extension ne sont pas réalisables car elle nécéssite une action de l'utilisateur sur le clavier ou la souris.
 
 
