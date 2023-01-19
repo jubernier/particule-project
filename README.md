@@ -120,7 +120,7 @@ Pour passer d'une config.json à une autre il suffit d'utiliser les fléches du 
   - L'opacitée d'une particule baisse automatiquement et en conséquences en fonction de sa durée de vie
   - [x] Tests
 
--[x] 5.4 - Variation de transparence , couleur et échelle :
+- [x] 5.4 - Variation de transparence , couleur et échelle :
   - modifie la taille des particules au fil du  temps 
   - modifie la couleur des particules au fil du temps ainsi que la transparence dédinies par la variable "Opacity" dans config.json
     
