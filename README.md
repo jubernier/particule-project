@@ -132,9 +132,7 @@ Pour passer d'une config.json à une autre il suffit d'utiliser les fléches du 
 
 - [x] 5.7 - Forme du générateur
   - [x] Explosion
-    - Définir si une particule est "explosive" ou non
   - [x] Cercle 
-  - [x] Explosion 
 
   - [x] Tests
   
