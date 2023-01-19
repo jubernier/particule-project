@@ -6,7 +6,7 @@ Pour compiler le projet, il vous faudra utiliser la commande `go build` depuis l
 
 ## Exemple de configuration
 
-Pour passer d'une config.json à une autre il suffit d'utiliser les fléches du clavier .
+Pour passer d'une config.json à une autre il suffit d'utiliser les touches du clavier qui sont précisé dans la partie 5.10 ci-dessous.
 
 1. La configuration du fichier config1.json montre le système de particules qui apprraissent formant un cercle et qui rejoigne le cercle créant une sorte de tourbillon.
 2. La configuration du fichier config2.json montre le système de particules qui spawn en cercle et bougent suivant le curseur de notre souris
@@ -92,13 +92,6 @@ Pour passer d'une config.json à une autre il suffit d'utiliser les fléches du 
 > * Z : permet de visualiser le déplacement du générateur en fonction du curseur .
 > La touche espace permet d'afficher la config de base (tourbillon)
 >
-> Les extensions fonctionnant avec celle-ci sont :
-> - 5.1 Gravitée
-> - 5.2 Extérieur de l'écran
-> - 5.3 Durée de vie
-> - 5.4 Variations de couleur, d’échelle, de rotation, de transparence
-> - 5.7 Forme du générateur
-> - 5.9 Déplacement du générateur
 
 ## Extensions réalisées & fonctionnement
 
